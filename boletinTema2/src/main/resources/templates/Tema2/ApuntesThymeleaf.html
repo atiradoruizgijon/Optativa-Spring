@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	@Component hace que una clase sea reconocida por Spring
+	<br>
+	La imagen tiene que estar en la carpeta 'static'.
+    <img th:src="@{/img/Spring.png}" height="150px">
+	
+	<span th:if="${user.sexo}" th:text="Hombre"></span>
+	<span th:unless="${user.sexo}" th:text="Mujer"></span>
+</body>
+
+</html>

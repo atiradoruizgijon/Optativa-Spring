@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    --amarillito: #DCDB0D;
+    --Aoscurito: #898800;
+    --moradito: #631093;
+    --Mclarito: #772DA3;
+    --Aclarito: #F3F238;
+    
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+}
+form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 300px auto;
+    gap: 0.4em;
+}
+input {
+    padding: 0.4em;
+}
+h1 {
+    margin-bottom: 1em;
+    font-size: 2em;
+    text-align: center;
+}
+a {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.18);
+    color: rgb(131, 200, 223);
+    text-decoration: underline;
+}
+header {
+    background-color: var(--moradito);
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+    display: flex;
+    width: 100%;
+}
+.header__a {
+    text-decoration: none;
+    transition: 1s;
+    color: white;
+}
+.header__a::after {
+    background-color: white;
+    transform: scaleX(0);
+    border-radius: 10px;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+}
+.header__a:hover::after {
+    transform: scale(1);
+    transition: 0.5s;
+}
+.incorrecto {
+    text-align: center;
+    color: red;
+}

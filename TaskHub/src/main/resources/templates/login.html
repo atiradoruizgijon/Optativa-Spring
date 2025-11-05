@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{../css/login.css}" href="../static/css/login.css">
+    <title>Inicio de Sesión</title>
+</head>
+
+<body>
+    <!-- el CSS tiene que estar en static -->
+    <header>
+        <!-- Página principal -->
+        <a class="header__a" th:href="@{/tareas}">Tareas</a>
+        <a class="header__a" th:href="@{/login}">Inicia Sesión</a>
+        <a class="header__a" th:href="@{/crear}">Crear cuenta</a>
+    </header>
+    <!-- En caso de que se introduzca mal -->
+    
+    <form action="/login" method="post">
+        <p class="incorrecto" th:if="${param.incorrecto}">Datos incorrectos</p>
+        <h1>Inicia sesión</h1>
+        <input type="text" name="user" placeholder="Usuario">
+        <input type="password" name="passw" placeholder="Contraseña">
+        <input type="submit" value="Iniciar Sesión">
+        <a th:href="@{/crear}">Crear cuenta</a>
+    </form>
+</body>
+
+</html>

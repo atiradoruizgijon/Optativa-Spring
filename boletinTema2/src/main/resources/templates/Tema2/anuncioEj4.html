@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+	</style>
+</head>
+
+<body>
+    <h1>Tabla de anuncios.</h1>
+	<h3 th:text="${bienvenida}"></h3>
+	<ul th:each="anuncio : ${anuncios}">
+		<!-- Mando el indice del objeto dentro del arraylist para mostrar el anuncio -->
+		<li>
+			<a th:href="@{mostrarAnuncioEj4(indice=${anuncios.indexOf(anuncio)})}">				
+				<span th:text="${anuncio.nombre}"></span>
+				<span th:text="${anuncio.asunto}"></span>
+			</a>
+		</li>
+	</ul>
+	<br>
+	<a th:href="@{nuevoAnuncioEj4(nombreEsc=${nombreEsc})}">Nuevo anuncio</a>
+</body>
+
+</html>

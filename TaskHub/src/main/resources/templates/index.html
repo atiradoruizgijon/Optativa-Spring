@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{../css/estilos.css}" href="../static/css/estilos.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header>
+        <!-- el CSS tiene que estar en static -->
+        <!-- Página principal -->
+        <a class="header__a" th:href="@{/tareas}">Tareas</a>
+        <a class="header__a" th:href="@{/login}">Inicia Sesión</a>
+        <a class="header__a" th:href="@{/crear}">Crear cuenta</a>
+    </header>
+    <main>
+        <h1>Gestor de tareas</h1>
+        <div class="botones">
+            <a th:href="@{/login}">Inicia Sesión</a>
+            <a th:href="@{/crear}">Crear cuenta</a>
+        </div>
+    </main>
+</body>
+
+</html>
