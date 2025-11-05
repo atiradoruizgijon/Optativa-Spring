@@ -11,7 +11,8 @@
 
 <body>
 	<h1>Tabla de anuncios.</h1>
-		<h3 th:if="${bienvenida}">Bienvenido al tablón de anuncios.</h3>
+		<h3 th:if="${bienvenida}"></h3>
+		<h3 th:unless="${bienvenida}">Bienvenido al tablón de anuncios.</h3>
 		
 		<ul th:each="anuncio : ${anuncios}">
 			<!-- Mando el indice del objeto dentro del arraylist para mostrar el anuncio -->

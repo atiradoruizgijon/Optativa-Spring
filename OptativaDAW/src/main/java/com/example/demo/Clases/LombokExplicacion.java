@@ -2,9 +2,11 @@ package com.example.demo.Clases;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class LombokExplicacion {
 	private String nombre;
 	private String apellido;

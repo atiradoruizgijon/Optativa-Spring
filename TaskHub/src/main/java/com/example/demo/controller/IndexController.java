@@ -24,7 +24,17 @@ public class IndexController {
 		if (usuario != null) {
 			model.addAttribute("usuario", usuario);
 			model.addAttribute("tareas", usuario.getTareas());
-			return "tareas";
+			return "redirect:/tareas";
+		}
+		return "index";
+	}
+	@GetMapping("/tareas")
+	public String tareas(HttpSession session, Model model) {
+		Usuario usuario = (Usuario) session.getAttribute("usuario");
+		if (usuario != null) {
+			model.addAttribute("usuario", usuario);
+			model.addAttribute("tareas", usuario.getTareas());
+			return "redirect:/tareas";
 		}
 		return "index";
 	}
