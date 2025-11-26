@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{../css/creacion.css}" href="../static/css/creacion.css">
+        <title>Creación de Tarea</title>
+    </head>
+
+    <body>
+        <main>
+            <h1>Crea una tarea para [[${session.usuario}]]</h1>
+            <form action="/crearTarea" method="post">
+                <select name="tipo" required>
+                    <option value="" selected disabled>Tipo de tarea</option>
+                    <option value="Instituto">Instituto</option>
+                    <option value="Casa">Tarea de casa</option>
+                    <option value="Personal">Personal</option>
+                </select>
+                <input type="text" name="titulo" placeholder="Título de tu tarea" required>
+                <textarea cols="40" rows="5" name="descripcion" placeholder="Describe aquí tu tarea" required></textarea>
+                <input type="submit" value="Crear Tarea">
+            </form>
+        </main>
+    </body>
+</html>

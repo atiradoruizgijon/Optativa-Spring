@@ -5,22 +5,67 @@
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{../css/estilos.css}" href="../static/css/estilos.css">
-    <title>Inicio</title>
+    <title>TaskHub</title>
 </head>
 
 <body>
-    <header>
-        <!-- el CSS tiene que estar en static -->
-        <!-- Página principal -->
-        <a class="header__a" th:href="@{/tareas}">Tareas</a>
-        <a class="header__a" th:href="@{/login}">Inicia Sesión</a>
-        <a class="header__a" th:href="@{/crear}">Crear cuenta</a>
-    </header>
     <main>
-        <h1>Gestor de tareas</h1>
-        <div class="botones">
-            <a th:href="@{/login}">Inicia Sesión</a>
-            <a th:href="@{/crear}">Crear cuenta</a>
+        <section>
+            <form action="/creacion" method="post">
+                <input type="submit" value="Crear una tarea">
+            </form>
+            <form action="/cerrarSesion" method="post">
+                <input type="submit" value="Cerrar Sesión">
+            </form>
+        </section>
+        <!-- otra forma:
+         <h1>Tareas de <span>[[${session.usuario}]]</span></h1> -->
+        <span th:if="${aviso}" onload='alert("Ya has iniciado sesión")'></span>
+        <h1>Tareas de <span style="font-size: 1em;">[[${session.usuario}]]</span></h1>
+        <div th:each="tarea : ${tareas}">
+            <!-- segun la tarea este marcada como completada o no, se pondra un estilo u otro -->
+            
+            <!-- Tareas no completadas -->
+            <ul th:if="${!tarea.completada}">
+                <li class="datos">Tipo: <span th:text="${tarea.tipo}"></span></li>
+                <li class="datos">Título: <span th:text="${tarea.titulo}"></span></li>
+                <li class="datos">Descripción: <span th:text="${tarea.descripcion}"></span></li>
+                <!-- fechas -->
+                <li class="fechaCreacion">Fecha de creación: <span th:text="${tarea.fechaCreacion}"></span></li>
+                <!-- botones borrar y completar -->
+                <li th:if="${not tarea.completada}">
+                    <form action="/completarTarea" method="post">
+                        <!-- mando el índice de la tarea para completarla -->
+                        <input type="hidden" name="indice" th:value="${tareas.indexOf(tarea)}">
+                        <input type="submit" value="Marcar como completada">
+                    </form>
+                </li>
+                <li>
+                    <form action="/borrarTarea" method="post">
+                        <!-- mando el índice de la tarea para borrarla -->
+                        <input type="hidden" name="indice" th:value="${tareas.indexOf(tarea)}">
+                        <input type="submit" value="Borrar Tarea">
+                    </form>
+                </li>
+            </ul>
+            <!-- Tareas completadas -->
+            <ul th:if="${tarea.completada}" class="completada">
+                
+                <li class="datos">Tipo: <span th:text="${tarea.tipo}"></span></li>
+                <li class="datos">Título: <span th:text="${tarea.titulo}"></span></li>
+                <li class="datos">Descripción: <span th:text="${tarea.descripcion}"></span></li>
+                <!-- fechas -->
+                <li class="fechaCreacion">Fecha de creación: <span th:text="${tarea.fechaCreacion}"></span></li>
+                <li class="fechaCompletada">Fecha en la que la completaste: <span th:text="${tarea.fechaCompletada}"></span></li>
+                <!-- botones borrar y completar -->
+                <li>
+                    <form action="/borrarTarea" method="post">
+                        <!-- mando el índice de la tarea para borrarla -->
+                        <input type="hidden" name="indice" th:value="${tareas.indexOf(tarea)}">
+                        <input type="submit" value="Borrar Tarea">
+                    </form>
+                </li>
+            </ul>
         </div>
     </main>
 </body>

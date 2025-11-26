@@ -1,0 +1,23 @@
+* {
+	font-family: sans-serif;
+}
+form {
+	display: inline;
+}
+h1 {
+	color: cornflowerblue;
+}
+td {
+	padding: 10px 15px;
+	border: 2px solid black;
+}
+table {
+	border-collapse: collapse;
+}
+.cabecera {
+	background-color: lightgray;
+}
+img {
+	width: 300px;
+	height: 200px;
+}

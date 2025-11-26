@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{../css/inicio.css}" href="../static/css/inicio.css">
+        <title>Sesión</title>
+    </head>
+
+    <body>
+        <main>
+            <span th:if="${aviso}" onload='alert("Ya has iniciado sesión")'></span>
+            <h1>Introduce tu nombre para empezar a añadir tareas.</h1>
+            <form action="/iniciarSesion" method="post">
+                <input type="text" name="usuario" placeholder="Nombre de usuario">
+                <input type="submit" value="Entrar">
+            </form>
+        </main>
+    </body>
+</html>

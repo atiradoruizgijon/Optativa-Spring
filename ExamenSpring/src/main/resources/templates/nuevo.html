@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuevo Ordenador</title>
+		<link rel="stylesheet" th:href="@{../nuevo.css}">
+    </head>
+
+    <body>
+        <header>
+			<h1>Añadir nuevo ordenador</h1>
+			<p>Total de segundos desde la última visita (valor obtenido desde cookie): </p>
+			<p>La cookie se borrará si se pulsa el botón "Eliminar Cookie" o se alcanza un gasto total de 10000 €</p>
+		</header>
+		
+		<main>
+			<h2 class="aviso" th:if="${aviso}">La ID ya existe</h2>
+			<section>
+				<h2>Nueva Laptop</h2>
+				<form action="/nuevoLaptop" method="post">
+					<label for="id">ID*</label>
+					<input type="text" name="id" placeholder="ID distinto" required>
+					<label for="precio">Precio*</label>
+					<input type="number" name="precio" min="600" max="3000" step="25" required>
+					<label for="periferico">Periférico de regalo:</label>
+					<input type="text" value="CPU, RAM, DISCO_DURO, TARJETA_GRAFICA, PLACA_BASE" disabled>
+					(Se elegirá uno al azar)
+					<input type="submit" value="Añadir Laptop">
+				</form>
+			</section>
+			<section>
+				<h2>Nuevo PC</h2>
+				<form action="/nuevoPC" method="post">
+					<label for="id">ID*</label>
+					<input type="text" name="id" placeholder="ID distinto" required>
+					<label for="precio">Precio*</label>
+					<input type="number" name="precio" min="600" max="3000" step="25" required>
+					<label for="periferico">Periférico de regalo:</label>
+					<input type="text" value="CPU, RAM, DISCO_DURO, TARJETA_GRAFICA, PLACA_BASE" disabled>
+					(Se elegirá uno al azar)
+					<input type="submit" value="Añadir PC">
+				</form>
+			</section>
+			<p>* Campos obligatorios</p>
+			<a th:href="@{/}">Volver al listado</a>
+		</main>
+    </body>
+</html>

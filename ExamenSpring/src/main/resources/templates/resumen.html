@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resumen</title>
+		<link rel="stylesheet" th:href="@{../resumen.css}">
+    </head>
+
+    <body>
+        <h1>Resumen de compra</h1>
+		<p>Número de ordenadores comprados: <span th:text="${totalComprado}"></span></p>
+		<p>Total acumulado de todos los ordenadores: <span th:text="${totalPrecio}"></span></p>
+		<form action="/" method="get">
+			<input type="submit" value="Comprar más ordenadores">
+		</form>
+    </body>
+</html>

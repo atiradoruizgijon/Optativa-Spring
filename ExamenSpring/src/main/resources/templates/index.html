@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+		<link rel="stylesheet" th:href="@{../styles.css}">
+    </head>
+
+    <body>
+		<header>
+	        <h1>Listado de Ordenadores</h1>
+			<p>Total de segundos desde la última visita (valor obtenido desde cookie): </p>
+			<p>La cookie se borrará si se pulsa el botón "Eliminar Cookie" o se alcanza un gasto total de 10000 €</p>
+	    
+			<h2>Total acumulado de todos los ordenadores: <span th:text="${precioTotal}"></span> €</h2>
+			
+			<h3 th:text="${mensaje}"></h3>
+		</header>
+		<div>
+			<form action="/eliminarCookie" method="get">
+				<input type="submit" value="Eliminar cookie"></input>
+			</form>
+			<form action="/nuevo" method="get">
+				<input type="submit" value="Añadir nuevo ordenador"></input>
+			</form>
+			<form action="/resumen" method="get">
+				<input type="submit" value="Salir de la aplicación y ver resumen"></input>
+			</form>
+		</div>
+		<main>
+			<section>
+				<h2>Listado de Laptops</h2>
+				<table>
+					<thead>
+						<tr class="cabecera">
+							<td>ID</td>
+							<td>Precio</td>
+							<td>Periférico de regalo</td>
+							<td>Imagen</td>
+						</tr>
+					</thead>
+					<tbody th:each="lista : ${listaL}">
+						<tr>
+							<td th:text="${lista.id}"></td>
+							<td th:text="${lista.precio}"></td>
+							<td th:text="${lista.perifericoDeRegalo}"></td>
+							<td><img th:src="@{${lista.imagePath}}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section>
+				<h2>Listado de PCs</h2>
+				<table>
+					<thead>
+						<tr class="cabecera">
+							<td>ID</td>
+							<td>Precio</td>
+							<td>Periférico de regalo</td>
+							<td>Imagen</td>
+						</tr>
+					</thead>
+					<tbody th:each="lista : ${listaP}">
+						<tr>
+							<td th:text="${lista.id}"></td>
+							<td th:text="${lista.precio}"></td>
+							<td th:text="${lista.perifericoDeRegalo}"></td>
+							<td><img th:src="@{${lista.imagePath}}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+	</body>
+</html>
