@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    --moradito: #631093;
+    --Mclarito: #772DA3;
+    --amarillo: #CCCC20;
+    --amarilloC: #FFFF78;
+
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    padding: 0;
+    margin: 0;
+}
+main {
+    margin: 2em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-direction: column;
+}
+h1 {
+    font-size: 2em;
+}
+span {
+    font-size: 1em;
+}
+div {
+    width: 50%;
+    min-width: 900px;
+}
+ul {
+    height: fit-content;
+    color: white;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    background-color: var(--moradito);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px black;
+}
+li {
+    height: fit-content;
+    display: inline-block;
+}
+.datos {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 4px;
+    padding: 5px;
+}
+span {
+    height: fit-content;
+    font-weight: normal;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+form input {
+    background-color: var(--Mclarito);
+    color: white;
+    padding: 5px 15px;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+form input:hover {
+    background-color: white;
+    color: var(--Mclarito);
+    border: 1px solid var(--Mclarito);
+}
+.fechaCreacion, .fechaCompletada {
+    font-size: 0.5em;
+}
+.completada {
+    background-color: var(--amarillo);
+    color: black;
+}
+.completada form input {
+    background-color: var(--amarilloC);
+    color: black;
+    padding: 5px 15px;
+    border: 1px solid var(--moradito);
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.completada form input:hover {
+    background-color: var(--moradito);
+    color: var(--amarilloC);
+    border: 1px solid var(--moradito);
+}
+section > form {
+    display: inline;
+}
+section > form > input{
+    padding: 15px 25px;
+}

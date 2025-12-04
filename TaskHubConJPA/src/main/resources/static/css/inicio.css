@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    --moradito: #631093;
+    --Mclarito: #772DA3;
+
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    padding: 0;
+    margin: 0;
+}
+main {
+    width: fit-content;
+    margin: 16em auto;
+}
+form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    gap: 0.4em;
+    margin: auto;
+}
+h1 {
+    margin-bottom: 2em;
+    font-size: 1.6em;
+}
+span {
+    font-size: 1em;
+}
+input:first-child {
+    padding: 10px;
+}
+input:last-child {
+    padding: 15px 25px;
+    color: white;
+    background-color: var(--moradito);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.367);
+    border: 2px solid black;
+    transition: 0.2s ease-in-out;
+    border-radius: 4px;
+}
+input:last-child:hover {
+    background-color: white;
+    color: var(--moradito);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease-in-out;
+}

@@ -42,29 +42,4 @@ public class Tema1Controller {
 		model.addAttribute("nombreUsuario", nombre);
 		return "redirect:/mipagina";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

@@ -14,7 +14,7 @@
 }
 main {
     width: fit-content;
-    margin: 16em auto;
+    height: 100vh;
 }
 form {
     width: fit-content;
